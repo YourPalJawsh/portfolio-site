@@ -48,4 +48,10 @@ h2 {
     padding: 2%;
     color: rgb(169, 191, 168);
 }
+
+.miniPic img {
+    width: auto;
+    height: 500px;
+    background-color: rgb(58, 57, 96);
+}
   
