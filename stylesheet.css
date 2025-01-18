@@ -1,0 +1,52 @@
+body {
+    background-color: rgb(240, 240, 215);
+}
+
+h1 {
+    color: rgb(58, 57, 96);
+    text-align: center;
+    font-size: 40px;
+}
+
+h2 {
+    clear: both;
+    color: rgb(240, 240, 215);
+    text-align: left;
+    font-size: 30px;
+    padding: 2%;
+    background-color: rgb(58, 57, 96);
+    height: 30px;
+}
+
+.wrapper {
+    margin: auto;
+    display: flex;
+}
+
+.picture1 img {
+    width: auto;
+    height: 500px;
+    background-color: rgb(58, 57, 96);
+}
+
+.block1 {
+    width: 50%;
+    height: auto;
+    font-size: 20px;
+    line-height: 2.0;
+    background-color: rgb(169, 191, 168);
+    padding: 2%;
+    color: rgb(94, 104, 109);
+}
+
+.block2 {
+    width: 50%;
+    height: auto;  
+    font-size: 20px;
+    line-height: 2.0;
+    background-color: rgb(94, 104, 109);
+    padding: 2%;
+    color: rgb(169, 191, 168);
+}
+
+  
