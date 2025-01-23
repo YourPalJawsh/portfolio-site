@@ -36,7 +36,6 @@ h2 /*Javascript header*/ {
     clear: both;
     color: var(--text-accent-color);
     background-color: var(--accent-color);
-    text-align: left;
     font-size: 30px;
     padding: 2%;
     height: 30px;
@@ -45,6 +44,10 @@ h2 /*Javascript header*/ {
 a {
     color: var(--text-accent-color);
   }
+
+.bodyText {
+    color: var(--text-color);
+}
 
 .wrapper {
     margin: auto;
@@ -89,7 +92,7 @@ footer {
     clear: both;
     margin: auto;
     display: flex;
-    justify-content: space-between;
+    justify-content: left;
 }
 
 button {

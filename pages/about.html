@@ -4,6 +4,7 @@
         <meta charset="UTF-8">
         <title>About</title>
         <link rel="stylesheet" href="../stylesheet.css">
+        <script src="../script.js" type="text/javascript"></script> 
     </head>
     <body>
         <h1>Contact</h1>
@@ -11,9 +12,16 @@
             <!----<img src="../images/Mountains.jpg" alt="Picture of Josh Teles in mountains">-->
         </div>
         <div>
-                <h3>joshteles@gmail.com</h3>
+            <p class="bodyText">Contact me at: joshteles@gmail.com</p>  
         </div>
         <footer>
+            <div class="fRow1">
+                <h3>Site Settings</h3>
+                <p id="modeInfo">Current Mode: Default</p>
+                    <button id="default" onclick="setDefaultMode()">Default Mode</button>
+                    <button id="darkmode" onclick="setDarkMode()">Dark Mode</button>
+                    <button id="lightmode" onclick="setLightMode()">Light Mode</button>
+            </div>
             <div class="fRow2">
                 <p>Menu</p>
                 <p><a href="../index.html" color="white">Back to Home</a></p>
