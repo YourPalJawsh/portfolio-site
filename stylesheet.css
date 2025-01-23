@@ -1,57 +1,115 @@
+:root {
+    --main-color: rgb(255, 250, 236);
+    --sec-color: rgb(245, 236, 213);
+    --text-color: rgb(61, 61, 61);
+    --text-accent-color: rgb(255, 250, 236);
+    --accent-color: rgb(58, 57, 96);
+}
+
+.lightmode {
+    --main-color: rgb(238, 238, 238);
+    --sec-color: rgb(208, 209, 210);
+    --text-color: rgb(34, 40, 49);
+    --text-accent-color: rgb(34, 40, 49);
+    --accent-color: rgb(208, 209, 210);
+}
+
+.darkmode {
+    --main-color: rgb(34, 40, 49);
+    --sec-color: rgb(57, 62, 70);
+    --text-color: rgb(238, 238, 238);
+    --text-accent-color: rgb(238, 238, 238);
+    --accent-color: rgb(57, 62, 70);
+}
+
 body {
-    background-color: rgb(240, 240, 215);
+    background-color: var(--main-color);
 }
 
 h1 {
-    color: rgb(58, 57, 96);
+    color: var(--text-color);
     text-align: center;
     font-size: 40px;
 }
 
-h2 {
+h2 /*Javascript header*/ {
     clear: both;
-    color: rgb(240, 240, 215);
+    color: var(--text-accent-color);
+    background-color: var(--accent-color);
     text-align: left;
     font-size: 30px;
     padding: 2%;
-    background-color: rgb(58, 57, 96);
     height: 30px;
 }
+
+a {
+    color: var(--text-accent-color);
+  }
 
 .wrapper {
     margin: auto;
     display: flex;
 }
 
-.picture1 img {
+img {
+    background-color: var(--sec-color);
     width: auto;
     height: 500px;
-    background-color: rgb(58, 57, 96);
 }
 
 .block1 {
+    color: var(--text-color);
+    background-color: var(--sec-color);
     width: 50%;
     height: auto;
     font-size: 20px;
     line-height: 2.0;
-    background-color: rgb(169, 191, 168);
     padding: 2%;
-    color: rgb(94, 104, 109);
 }
 
 .block2 {
+    color: var(--text-accent-color);
+    background-color: var(--accent-color);
     width: 50%;
     height: auto;  
     font-size: 20px;
     line-height: 2.0;
-    background-color: rgb(94, 104, 109);
     padding: 2%;
-    color: rgb(169, 191, 168);
 }
 
 .miniPic img {
+    background-color: var(--accent-color);
     width: auto;
     height: 500px;
-    background-color: rgb(58, 57, 96);
 }
+
+footer {
+    background-color: var(--accent-color);
+    color: var(--text-accent-color);
+    clear: both;
+    margin: auto;
+    display: flex;
+}
+
+button {
+    padding: 10px 20px;
+    margin: 5px;
+}
+
+.fRow1 {
+    font-family: Arial, Helvetica, sans-serif;
+    width: auto;
+    height: auto;
+    font-size: auto;
+    padding: 10px;
+}
+
+.fRow2 {
+    font-family: Arial, Helvetica, sans-serif;
+    width: auto;
+    height: auto;
+    font-size: auto;
+    padding: 10px;
+}
+  
   

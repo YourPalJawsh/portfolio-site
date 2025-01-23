@@ -4,6 +4,7 @@
         <meta charset="UTF-8">
         <title>Teles Javascript Portfolio</title>
         <link rel="stylesheet" href="stylesheet.css">
+        <script src="buttonscript.js"></script> 
     </head>
     <body>
         <h1>Joshua Teles' Javascript Portfolio</h1>
@@ -31,9 +32,17 @@
             <h2>JavaScript Projects</h2>
         </div>
         <footer>
-            <p>
-                <a href="pages/about.html">Contact Info</a>
-            </p>
+            <div class="fRow1">
+                <h3>Site Settings</h3>
+                <p id="modeInfo">Current Mode: Default</p>
+                    <button id="default" onclick="setDefaultMode()">Default Mode</button>
+                    <button id="darkmode" onclick="setDarkMode()">Dark Mode</button>
+                    <button id="lightmode" onclick="setLightMode()">Light Mode</button>
+            </div>
+            <div class="fRow2">
+                <p>About</p>
+                <p><a href="pages/about.html" color="white">Contact Info</a></p>
+            </div>
         </footer>
     </body>
 </html>
