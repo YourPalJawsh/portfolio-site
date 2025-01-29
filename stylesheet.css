@@ -45,8 +45,22 @@ a {
     color: var(--text-accent-color);
   }
 
+#projLinks {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    color: var(--text-color);
+}
+
 .bodyText {
     color: var(--text-color);
+}
+
+.projList {
+    clear: both;
+    color: var(--text-color);
+    width: auto;
+    height: auto;
+    padding: 2%;
 }
 
 .wrapper {
@@ -115,5 +129,35 @@ button {
     font-size: auto;
     padding: 10px;
 }
-  
-  
+
+.calcBlock {
+    color: var(--text-color);
+    background-color: var(--sec-color);
+    width: 200px;
+    height: 200px;
+    font-size: auto;
+    padding: 20px;
+    display: flex;
+    justify-content: left;
+}
+
+.ansBlock {
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--text-color);
+    background-color: var(--sec-color);
+    width: 200px;
+    height: 50px;
+    font-size: auto;
+    padding: 20px;
+    display: flex;
+    justify-content: left;
+    text-indent: 5px;
+}
+
+.calcImg img {
+    width: 300px;
+    height: 250px;
+    padding: 30px;
+    display: flex;
+    margin-left: 150px;
+}

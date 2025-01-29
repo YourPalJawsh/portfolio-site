@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Geometry Calculator</title>
+        <link rel="stylesheet" href="../stylesheet.css">
+        <script src="../script.js" type="text/javascript"></script> 
+        <script>
+            function getPerimeter() 
+            {
+                let a = parseFloat(document.getElementById('sideA').value);
+                let b = parseFloat(document.getElementById('baseB').value);
+                let c = parseFloat(document.getElementById('sideC').value);
+
+                if ( (a <= 0) || (b <= 0) || (c <= 0) ) {
+                    document.getElementById("perimDisplay").innerHTML = "Make sure all values are greater than zero";
+                }
+                else if ((b + c) > a) {
+                    let perimeter = a + b + c;
+                    document.getElementById("perimDisplay").innerHTML = perimeter;
+                }
+                else {
+                    document.getElementById("perimDisplay").innerHTML = "Error, make sure b + c > a";
+                }
+            }
+
+            function getArea()
+            {
+                let h = parseFloat(document.getElementById('height').value);
+                let b = parseFloat(document.getElementById('baseB2').value);
+
+                if ( (h <= 0) || (b <= 0) ) {
+                    document.getElementById("areaDisplay").innerHTML = "Make sure all values are greater than zero";
+                }
+                else {
+                    let area = (h * b)/2
+                    document.getElementById("areaDisplay").innerHTML = area;
+                }                
+            }
+
+            function getVolume()
+            {
+                let l = parseFloat(document.getElementById('length').value);
+                let w = parseFloat(document.getElementById('width').value);
+                let h = parseFloat(document.getElementById('height2').value);
+
+                if ( (l <= 0) || (w <= 0) || (h <= 0) ) {
+                    document.getElementById("volDisplay").innerHTML = "Make sure all values are greater than zero";
+                }
+                else {
+                    let volume = ( (1/3) * l * w * h );
+                    document.getElementById("volDisplay").innerHTML = volume;
+                }
+            }
+                
+        </script>
+
+    </head>
+    <body>
+        <h2>Perimeter of a Triangle Calculator</h2>
+        <div class="calcBlock">         
+            <form onsubmit="getPerimeter(); return false;">
+                <label for="sideA">Side a:</label><br>
+                <input type="text" id="sideA" name="sideA"><br><br>
+
+                <label for="baseB">Base b:</label><br>
+                <input type="text" id="baseB" name="baseB"><br><br>
+
+                <label for="sideC">Side c:</label><br>
+                <input type="text" id="sideC" name="sideC"><br><br>
+
+                <input type="submit" value="Calculate Perimeter">
+            </form>
+
+            
+
+            <div class="calcImg">
+                <img src="../images/Perimeter.png" alt="Perimeter of a triangle">
+            </div>
+        </div>
+        <div class="ansBlock">
+            <h3>The perimeter is: </h3>
+            <h3 id="perimDisplay">?</h3>
+        </div>
+
+        <hr>
+
+        <h2>Area of a Triangle Calculator</h2>
+        <div class="calcBlock">
+            <form onsubmit="getArea(); return false;">
+                <label for="height">Height:</label><br>
+                <input type="text" id="height" name="height"><br><br>
+                
+                <label for="baseB">Base b:</label><br>
+                <input type="text" id="baseB2" name="baseB2"><br><br>
+                
+                <input type="submit" value="Calculate Area">
+            </form>   
+
+            <div class="calcImg">
+                <img src="../images/Area.png" alt="Area of a Triangle">
+            </div>
+        </div>
+        <div class="ansBlock">
+            <h3>The area is: </h3>
+            <h3 id="areaDisplay">?</h3>
+        </div>
+
+        <hr>
+
+        <h2>Volume of a Pyramid Calculator</h2>
+        <div class="calcBlock">
+            <form onsubmit="getVolume(); return false;">
+                <label for="length">Length:</label><br>
+                <input type="text" id="length" name="length"><br><br>
+
+                <label for="width">Width:</label><br>
+                <input type="text" id="width" name="width"><br><br>
+
+                <label for="height">Height:</label><br>
+                <input type="text" id="height2" name="height2"><br><br>
+                
+                <input type="submit" value="Calculate Volume">
+            </form>
+
+            <div class="calcImg">
+                <img src="../images/Volume.png" alt="Volume of a Triangle">
+            </div>
+        </div>
+        <div class="ansBlock">
+            <h3>The volume is: </h3>
+            <h3 id="volDisplay">?</h3>
+        </div>
+
+        <br><br><br>
+
+        <footer>
+            <div class="fRow1">
+                <h3>Site Settings</h3>
+                <p id="modeInfo">Current Mode: Default</p>
+                    <button id="default" onclick="setDefaultMode()">Default Mode</button>
+                    <button id="darkmode" onclick="setDarkMode()">Dark Mode</button>
+                    <button id="lightmode" onclick="setLightMode()">Light Mode</button>
+            </div>
+            <div class="fRow2">
+                <p>Menu</p>
+                <p><a href="../index.html" color="white">Back to Home</a></p>
+                <p><a href="about.html" color="white">Contact Info</a></p>
+            </div>
+        </footer>
+    </body>
