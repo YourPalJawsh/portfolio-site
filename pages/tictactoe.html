@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tic-Tac-Toe</title>
+    <script src="../scripts/tictactoe_script.js"></script>
+    <style> 
+        button { 
+            width: 50px; 
+            height: 50px;
+            background-color: rgb(241, 241, 241);
+        }
+        .buttonBlocks {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+        .reset {
+            width: 100px;
+            height: 50px;
+        }
+        .notif {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="display: flex; justify-content: center;">Tic-Tac-Toe</h1>
+        <table style="display: flex; justify-content: center;">
+            <tr>
+                <td><button id="a1" onclick="changeMark('a1')"></button></td>
+                <td><button id="b1" onclick="changeMark('b1')"></button></td>
+                <td><button id="c1" onclick="changeMark('c1')"></button></td>
+            </tr>
+            <tr>
+                <td><button id="a2" onclick="changeMark('a2')"></button></td>
+                <td><button id="b2" onclick="changeMark('b2')"></button></td>
+                <td><button id="c2" onclick="changeMark('c2')"></button></td>
+            </tr>
+            <tr>
+                <td><button id="a3" onclick="changeMark('a3')"></button></td>
+                <td><button id="b3" onclick="changeMark('b3')"></button></td>
+                <td><button id="c3" onclick="changeMark('c3')"></button></td>
+            </tr>
+        </table>
+        <div class="buttonBlocks">
+            <p id="winNoti" class="notif">X, click a button to begin!</p>
+            <button class="reset" id="resetButton" onclick="resetBoard()">Reset?</button>
+        </div>
+</body>
+</html>
