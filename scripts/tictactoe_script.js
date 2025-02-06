@@ -5,7 +5,6 @@ let oScore = 0;
 
 function changeMark(buttonId) {
     let currentMark = document.getElementById(buttonId).innerHTML;
-    gameBoard.disabled = false;
     if (!currentMark) {
         if (xTurn) {
             document.getElementById(buttonId).innerHTML = "X";
