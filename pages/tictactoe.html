@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Tic-Tac-Toe</title>
     <script src="../scripts/tictactoe_script.js"></script>
-    <style> 
+    <style>         
         button { 
             width: 50px; 
             height: 50px;
@@ -47,7 +47,22 @@
         </table>
         <div class="buttonBlocks">
             <p id="winNoti" class="notif">X, click a button to begin!</p>
-            <button class="reset" id="resetButton" onclick="resetBoard()">Reset?</button>
+            <table class="notif">
+                <tr>
+                    <th>Player</th>
+                    <th>Score</th>
+                </tr>
+                <tr>
+                    <td>X</td>
+                    <td id="playerX">0</td>
+                </tr>
+                <tr>
+                    <td>O</td>
+                    <td id="playerO">0</td>
+                </tr>
+            </table>
+            <button class="reset" id="resetButton" onclick="resetBoard()">Reset Board?</button>
+            <button class="reset" id="resetButton" onclick="resetScore()">Reset Score?</button>
         </div>
 </body>
 </html>

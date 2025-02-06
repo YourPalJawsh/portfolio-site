@@ -1,9 +1,11 @@
 // 
 let xTurn = true;
+let xScore = 0;
+let oScore = 0;
 
 function changeMark(buttonId) {
     let currentMark = document.getElementById(buttonId).innerHTML;
-
+    gameBoard.disabled = false;
     if (!currentMark) {
         if (xTurn) {
             document.getElementById(buttonId).innerHTML = "X";
@@ -57,6 +59,9 @@ function checkWin() {
         (c1 == b2 && b2 == a3 && c1 == "X")
     ){
         document.getElementById("winNoti").innerHTML = "X wins!";
+        xScore++;
+        document.getElementById("playerX").innerHTML = xScore;
+        resetBoard();
     }
 
     // O-WIN conditions
@@ -76,6 +81,9 @@ function checkWin() {
         (c1 == b2 && b2 == a3 && c1 == "O")
     ){
         document.getElementById("winNoti").innerHTML = "O wins!";
+        oScore++;
+        document.getElementById("playerO").innerHTML = oScore;
+        resetBoard();
     }
 }
 
@@ -103,3 +111,11 @@ function resetBoard() {
     document.getElementById("winNoti").innerHTML = "X, click a button to begin!";
     xTurn = true;
 }
+
+function resetScore() {
+    oScore = 0;
+    xScore = 0;
+    document.getElementById("playerX").innerHTML = xScore;
+    document.getElementById("playerO").innerHTML = oScore;
+}
+
