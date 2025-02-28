@@ -25,17 +25,37 @@
     <div id='gameBoard'></div>
 
     <script>
+        // Global Map Variable, houses 2D array
         let map = []; 
         let tile1 = null, tile2 = null;
 
         // TODO: Write the project code
 
-        // Decide how many tiles there are
-        let loadMap = (rows = 2, cols = 2) => { (rows * cols)/2 }
+        // Load tiles
+        let loadMap = (rows = 2, cols = 2) => { 
+            const maximumValue = (rows * cols)/2; 
+            const pairStore = [];
+            for (let i = 0; i <= maximumValue; i++){
+                pairStore.push(i);
+                pairStore.push(i);
+            }
 
-        function gameReset(){
+            const shuffle = (array) => {
+            for (let i = array.length - 1; i > 0; i--) { 
+                const j = Math.floor(Math.random() * (i + 1));
+                let temp = array[i]; 
+                array[i] = array[j]; 
+                array[j] = temp; 
+                } 
+                return array;
+            }
 
-        }
+            
+        };
+
+        
+
+        
     </script>
 </body>
 </html>
