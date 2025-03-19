@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>DOM Puzzle</title>
+        <style>
+            /* NOTE: Do NOT modify this stylesheet */
+            #puzzle { width: 500px; height: 500px; border: 5px solid black;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- NOTE: Do NOT modify the body or div -->
+        <div id='puzzle'></div>
+
+        <script>
+            let highlightCol = "#FF9E00";
+            let normBorder = "black";
+
+            // Create a h1
+            const heading = document.createElement("h1");
+            heading.innerHTML = "DOM Puzzle";
+            document.body.appendChild(heading);
+            
+            // Creating puzzle variable + border behavior
+            const puzzle = document.getElementById("puzzle");
+            puzzle.style.display = "flex";
+            puzzle.style.flexWrap = "wrap";
+            puzzle.addEventListener("mouseenter", changeBorder);
+            puzzle.addEventListener("mouseleave", restoreBorder);
+            document.body.appendChild(puzzle);
+
+            // create a paragraph description
+            const desc = document.createElement("p");
+            desc.innerHTML = "This is a puzzle created entirely with JavaScript."
+            document.body.appendChild(desc);
+
+            // Div for formatting upper left box
+            const upLeft = document.createElement("div");
+            upLeft.id = "upperLeft";
+            upLeft.style.display = "flex";
+            upLeft.style.flexWrap = "wrap";
+            upLeft.style.width = "250px";
+            upLeft.style.height = "250px";
+            puzzle.appendChild(upLeft);
+
+            // Div for formatting upper right box
+            const upRight = document.createElement("div");
+            upRight.id = "upperRight";
+            upRight.style.display = "flex";
+            upRight.style.flexWrap = "wrap";
+            upRight.style.width = "250px";
+            upRight.style.height = "250px";
+            upRight.style.backgroundColor = "#7338A0";
+            puzzle.appendChild(upRight);
+
+            // Div for formatting lower left box
+            const lowLeft = document.createElement("div");
+            lowLeft.id = "lowerLeft";
+            lowLeft.style.display = "flex";
+            lowLeft.style.flexWrap = "wrap";
+            lowLeft.style.width = "250px";
+            lowLeft.style.height = "250px";
+            lowLeft.style.backgroundColor = "#7338A0";
+            puzzle.appendChild(lowLeft);
+
+            // Div for formatting lower right box
+            const lowRight = document.createElement("div");
+            lowRight.id = "lowerRight";
+            lowRight.style.display = "flex";
+            lowRight.style.flexWrap = "wrap";
+            lowRight.style.width = "250px";
+            lowRight.style.height = "250px";
+            lowRight.style.backgroundColor = "#7338A0";
+            puzzle.appendChild(lowRight);
+
+            // Make the 4 buttons to the top-left
+            let bA = genButton("buttonA", "A", "#9455F4");
+            let bB = genButton("buttonB", "B", "#4A2B74");
+            let bC = genButton("buttonC", "C", "#594492");
+            let bD = genButton("buttonD", "D", "#854DDC");
+            upLeft.appendChild(bA);
+            upLeft.appendChild(bB);
+            upLeft.appendChild(bC);
+            upLeft.appendChild(bD);
+
+            // generate the 100 buttons
+            for (let i=0; i<100; i++){
+                let tempName = "button" + String(i+1); 
+                tempName = genMiniButton(tempName, "#C39CFE");
+                lowRight.appendChild(tempName);
+                console.log(tempName);
+            }   
+            
+            // Functions
+            function genButton(id, name, color){
+                let v = document.createElement("button");
+                v.id = id;
+                v.innerHTML = name;
+                v.style.height = "125px";
+                v.style.width = "125px";
+                v.style.backgroundColor = color;
+                v.style.color = "white";
+                v.addEventListener( "click", changeColor(v) );
+                return v;
+            }
+
+            // generate Small buttons
+            function genMiniButton(id, color){
+                let v = document.createElement("button");
+                v.id = id;
+                v.style.height = "24px";
+                v.style.width = "25px";
+                v.style.backgroundColor = color;
+                v.style.color = "white";
+                v.addEventListener( "click", changeMiniColor(v) );
+                return v;
+            }
+
+            function changeBorder(){
+                puzzle.style.borderColor = highlightCol;
+            }
+
+            function restoreBorder(){
+                puzzle.style.borderColor = normBorder;
+            }
+
+            // Change the color of the button, higher-order func
+            function changeColor(a){
+                return function(){
+                    a.style.backgroundColor = "#4A2574";
+
+                    // switch(a.id){
+                    //     case "buttonA":
+                    //         bB.style.backgroundColor = "#FF9E00";
+                    //         break;
+                    //     case "buttonB":
+                    //         bA.style.backgroundColor = "#FF9E00";
+                    //         bC.style.backgroundColor = "#FF9E00";
+                    //         break;
+                    //     case "buttonC":
+                    //         bB.style.backgroundColor = "#FF9E00";
+                    //         bD.style.backgroundColor = "#FF9E00";
+                    //         break;
+                    //     case "buttonD":
+                    //         bC.style.backgroundColor = "#FF9E00";
+                    //     default:
+                    //         break;
+                    // }
+                }
+            }
+
+            // Change the color of the smaller button
+            function changeMiniColor(a){
+                return function(){
+                    a.style.backgroundColor = "#4A2574";
+
+                    let sliceString = a.id.slice(6);
+                    console.log("you pressed mini button " + sliceString);
+                    let tempBox = parseInt(sliceString);
+                    let next = (tempBox + 1);
+                    let last = (tempBox - 1);
+
+                    let nextButton = document.getElementById("button" + String(next));
+                    if (nextButton)
+                        nextButton.style.backgroundColor = "#FF9E00";
+
+                    let lastButton = document.getElementById("button" + String(last));
+                    if (lastButton)
+                        lastButton.style.backgroundColor = "#FF9E00";
+                }
+            }
+
+        </script>
+    </body>
+</html>
