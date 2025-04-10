@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>To-do List</title>
+</head>
+<link rel="stylesheet" href="../stylesheets/todo_css.css">
+<body>
+    <h1 id="todoHeader">To-Do List</h1>
+    <div id="listArea">
+        <ul id="todo-list"></ul>
+    </div>
+    <div id="addTaskArea">  
+        <form>
+            <textarea id="taskBox" name="taskBox" ></textarea><br>
+            <button id="addTask">Add</button>
+        </form>
+    </div>
+</body>
+<footer>
+    <br>
+    <p style="display: inline-block;">Tasks added this session: </p>
+    <p id="count" style="display: inline-block;">0</p><br><br>
+
+    <button id="toggleDark">Toggle Dark Mode</button>
+
+    <p>To add a task, type in the description of the task that you would like to list, then click "Add." <br>
+        To remove a task, click on the desired item within the list.</p>
+</footer>
+<script src="../scripts/todo.js"></script>
+</html>

@@ -47,9 +47,17 @@ a {
 
 #projLinks {
     font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
     font-size: 20px;
     color: var(--text-color);
 }
+
+#projLinks:hover {
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: underline;
+    font-size: 20px;
+    color: var(--text-color);
+  }
 
 .bodyText {
     color: var(--text-color);
