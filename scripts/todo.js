@@ -12,9 +12,9 @@ window.onload = () => {
 
 // Save Preference to Cookies
 // mode=value, expiration date
-function setCookie(mode, value, time){
+function setCookie(mode, value, days){
     const date = new Date();
-    date.setTime(date.getTime() + (time * 24 * 60 * 60 * 1000));
+    date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
     let expiry = "expires=" + date.toUTCString();
     document.cookie = `${mode}=${value}; ${expiry}; path=/`;
 }
@@ -56,7 +56,7 @@ const darkMode = document.querySelector("#toggleDark");
         } 
     });
 
-function checkDarkMode(){
+function checkDarkMode() {
     let mode = getCookie("darkMode", "value");
     if (mode === "enabled"){
         console.log("Enabling dark-mode");
