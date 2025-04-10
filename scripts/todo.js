@@ -1,7 +1,12 @@
 // Create object with key/value pairs
-// grab from localStorage, if returns falsy (null, 0, etc), || says fall through and make an object!
 // Remember const CardValues = {};
-let list = JSON.parse( localStorage.getItem("todoList") ) || {};
+let list;
+
+if (localStorage.getItem("todoList")) {
+    list = JSON.parse(localStorage.getItem("todoList"));
+} else {
+    list = {};
+}
 
 // when the window loads, do this:
 window.onload = () => {
@@ -11,28 +16,24 @@ window.onload = () => {
 }
 
 // Save Preference to Cookies
-// mode=value, expiration date
-function setCookie(mode, value, days){
-    const date = new Date();
-    date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-    let expiry = "expires=" + date.toUTCString();
-    document.cookie = `${mode}=${value}; ${expiry}; path=/`;
+function makeCookie(mode, value){
+    document.cookie = `${mode}=${value}; path=/`;
 }
 
-// Sets date to 1970, deletes cookie because it has expired.
+// Deletes cookie because it has expired.
 function deleteCookie(mode){
     document.cookie = `${mode}=deleted; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/`;
 }
 
 // Specify whether you want key or value
 // can retrieve a key or value (key=value), ex: "darkMode"="enabled";
-function getCookie(mode, typeOfData){
+function grabCookie(mode, typeOfData){
     if (!document.cookie) {
         return null;
     }
-    let cookieArr = decodeURIComponent(document.cookie).split("; ");
+    let cookieArr = (document.cookie).split("; ");
     for (let c in cookieArr){
-        // Make array, split into elements after "="
+        // split into elements after "="
         let tempArr = cookieArr[c].split("=");
         let tempKey = tempArr[0].trim();
         let tempVal = tempArr[1];            
@@ -50,14 +51,14 @@ const darkMode = document.querySelector("#toggleDark");
     darkMode.addEventListener("click", () => {
         document.body.classList.toggle("dark-mode");
         if (document.body.classList.contains("dark-mode")) {
-            setCookie("darkMode", "enabled", 10);
+            makeCookie("darkMode", "enabled");
         } else {
-            setCookie("darkMode", "disabled", 10);
+            makeCookie("darkMode", "disabled");
         } 
     });
 
 function checkDarkMode() {
-    let mode = getCookie("darkMode", "value");
+    let mode = grabCookie("darkMode", "value");
     if (mode === "enabled"){
         console.log("Enabling dark-mode");
         document.body.classList.add("dark-mode");
