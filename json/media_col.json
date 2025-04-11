@@ -1,0 +1,23 @@
+[
+    {
+        "artifact":"Excalibur",
+        "rarity":"Legendary",
+        "wielder":"King Arthur",
+        "lore":"Arthurian Mythos",
+        "image":"../images/excalibur.jpg"
+    },
+    {
+        "artifact":"Andvaranaut",
+        "rarity":"Rare",
+        "wielder":"Andvari",
+        "lore":"Norse Mythos",
+        "image":"../images/Andvaranaut.jpg"
+    },
+    {
+        "artifact":"Aegis",
+        "rarity":"Legendary",
+        "wielder":"Zeus",
+        "lore":"Greek Mythos",
+        "image":"../images/Aegis.PNG"
+    }
+]
